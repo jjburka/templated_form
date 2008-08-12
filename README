@@ -1,0 +1,29 @@
+TemplatedForm
+=============
+
+Plugin based on various form examples I have ran across. 
+I do not claim to have the copyright or authorship for that code
+
+Example
+=======
+
+When installed creates the following helper methods: 
+  templated_form_for, templated_fields_for, templated_form_remote_for, 
+  templated_remote_form_for
+  
+The fields inside the above blocks will be rendered using the partials found in
+the views/forms directory
+
+_field.html.erb
+
+Overrides the label/field pair in normal conditions
+
+_field_with_errors.html.erb
+
+Overrides under error condition
+
+
+
+
+
+Copyright (c) 2008 James Burka released under the MIT license
