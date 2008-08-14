@@ -1,6 +1,6 @@
 require 'fileutils'
 
-install_to = File.join(RAILS_ROOT , 'views' , 'forms')
+install_to = File.join(RAILS_ROOT ,'app' ,'views' , 'forms')
 
 
 FileUtils.mkdir_p install_to
