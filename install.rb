@@ -18,6 +18,6 @@ field_with_error = '_field_with_error.html.erb'
 FileUtils.copy(File.join(PLUGIN_ROOT,'resources',field_with_error),
   File.join(PARTIAL_PATH,field_with_error))
 
-# watermark = 'jquery.watermark.js'
-# FileUtils.copy(File.join(PLUGIN_ROOT,'resources',watermark),
-#   File.join(RAILS_ROOT,'public','javascripts',watermark))
+watermark = 'jquery.watermark.js'
+FileUtils.copy(File.join(PLUGIN_ROOT,'resources',watermark),
+  File.join(RAILS_ROOT,'public','javascripts',watermark))
