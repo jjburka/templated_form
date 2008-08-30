@@ -12,10 +12,10 @@ module TemplatedForm
     module_eval src, __FILE__, __LINE__
   end
   
-  module Helper
-    def form_script_tags
-      javascript_include_tag "jquery.watermark"
-    end
-  end
+  # module Helper
+  #   def templated_form_script_tags
+  #     javascript_include_tag "jquery.watermark"
+  #   end
+  # end
     
 end
