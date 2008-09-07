@@ -3,6 +3,9 @@
 
 class TemplatedFormBuilder < ActionView::Helpers::FormBuilder
   
+  def initialize(object_name, object, template, options, proc)
+    super
+  end
   
   #displays the error message for the field
   def error_message(field,options)
@@ -13,6 +16,7 @@ class TemplatedFormBuilder < ActionView::Helpers::FormBuilder
     message = "#{(options[:label] || field).to_s.humanize} " unless field == :base
     "#{message}#{errors.is_a?(Array) ? errors.to_sentence : errors}"
   end
+  
 
   helpers = field_helpers +
     %w(date_select datetime_select time_select collection_select) +
@@ -41,12 +45,14 @@ class TemplatedFormBuilder < ActionView::Helpers::FormBuilder
                 #:label=>"My Label"
       template_options = {:field=>(options.delete(:use_base) ? :base : field),
                           :label=>options.delete(:label)}
+      if options.include? :message then
+        options[:title] = options.delete(:message)
+      end                    
       locals = { 
         :label    => label(field,*(template_options[:label])) ,
         #yields to build the requested element
         :element  => yield  
       }
-      
       #only display errors associated with the entire model , added for attachment_fu
       if has_errors_on?(template_options[:field])
        
