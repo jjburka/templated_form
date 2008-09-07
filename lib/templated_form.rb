@@ -16,7 +16,8 @@ module TemplatedForm
     end_src
     module_eval src, __FILE__, __LINE__
   end
-  
+
+#if the object in the form have a title attribute add a watermark to the objects  
   def build_watermark(form_id)
 <<-end_src
 <script type="text/javascript" charset="utf-8">

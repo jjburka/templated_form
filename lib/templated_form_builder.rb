@@ -43,11 +43,14 @@ class TemplatedFormBuilder < ActionView::Helpers::FormBuilder
       #:label - can be anything the normal label method will take
                 #:label=>["My Label",{:class=>"inline"}]
                 #:label=>"My Label"
+      #:message or :title will add a watermark to the element if its a textfield or textarea 
       template_options = {:field=>(options.delete(:use_base) ? :base : field),
                           :label=>options.delete(:label)}
       if options.include? :message then
         options[:title] = options.delete(:message)
-      end                    
+      end
+      
+                          
       locals = { 
         :label    => label(field,*(template_options[:label])) ,
         #yields to build the requested element
