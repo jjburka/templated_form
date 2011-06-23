@@ -8,3 +8,4 @@ ActionController::Base.send(:include,TemplatedForm)
 ActionView::Base.send(:include,TemplatedForm)
 
 #Something
+#Here
