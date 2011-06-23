@@ -6,3 +6,5 @@ require 'templated_form'
 
 ActionController::Base.send(:include,TemplatedForm)
 ActionView::Base.send(:include,TemplatedForm)
+
+#Something
